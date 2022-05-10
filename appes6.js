@@ -69,9 +69,11 @@ document.getElementById('book-form').addEventListener('submit', function(e){
     // Instantiate UI
     const ui = new UI;
 
+    // Validation
     if (title === '' || author === '' || isbn === ''){
        ui.showAlert("Please fill in the fields", "error")
     } else{
+
     //  Add book
     ui.addBookToList(book);
 
@@ -88,9 +90,12 @@ document.getElementById('book-form').addEventListener('submit', function(e){
 
 // Event Listener to delete book
 document.querySelector('#book-list').addEventListener('click', function(e){
+    // instantiate UI
     const ui = new UI()
 
+    // delete book
     ui.deleteBook(e.target)
 
+    // Show alert
     ui.showAlert('Book deleted', 'success')
 })
